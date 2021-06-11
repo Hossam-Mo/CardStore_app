@@ -1,0 +1,77 @@
+.userRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  border-radius: 25%;
+  width: 90%;
+}
+.useRow_left {
+  display: flex;
+  align-items: center;
+}
+.useRow_left > img {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+.useRow_left > div {
+  margin-left: 20px;
+}
+.useRow_left > div > h3 {
+  font-size: 15px;
+  color: rgb(39, 39, 39);
+  font-family: "Lora";
+}
+.useRow_left > div > h5 {
+  font-weight: 300;
+  font-size: 13px;
+  color: rgb(78, 78, 78);
+  font-family: "Lora";
+}
+.useRow_left > div > p {
+  font-weight: 300;
+  font-size: 11px;
+  color: rgb(78, 78, 78);
+  font-family: "Lora";
+}
+.useRow_right > button {
+  border: none;
+  border-radius: 32px;
+  font-family: "Lora";
+  font-size: 12px;
+  outline: none;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  color: white;
+  text-transform: none;
+}
+.row_input {
+  padding: 3px;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  color: gray;
+  font-family: "Lora";
+  outline: none;
+  text-align: center;
+}
+
+@media (max-width: 350px) {
+  .userRow {
+    padding: 10px;
+  }
+  .useRow_left > img {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+  }
+  .useRow_left > div > h3 {
+    font-size: 13px;
+  }
+  .useRow_left > div > h5 {
+    font-size: 11px;
+  }
+  .useRow_left > div > p {
+    font-size: 10px;
+  }
+}

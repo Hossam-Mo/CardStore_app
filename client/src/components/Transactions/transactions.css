@@ -1,0 +1,94 @@
+.transactions {
+  min-height: calc(100vh - 212px);
+  display: flex;
+  flex-direction: column;
+}
+.transactions > div > .MuiFormControl-root {
+  margin: 0 20px;
+  margin-top: 20px;
+}
+.transactions > div > .MuiFormControl-root > .MuiOutlinedInput-root {
+  border-radius: 50px;
+}
+.transactions_search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+.transactions_search > button {
+  padding: 10px;
+  margin-top: 18px;
+  margin-right: 10px;
+  font-size: 12px;
+  font-family: "Lora";
+  color: white;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  border: none;
+  border-radius: 50px;
+}
+.transactions_search > button:hover {
+  background-image: linear-gradient(to right, #025ac1, #0043a5);
+}
+.transactions_card {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid lightgray;
+  border-radius: 20%;
+  font-family: "Lora";
+  justify-content: space-between;
+  color: rgb(58, 58, 58);
+}
+
+.card_user {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 11px;
+  flex: 1;
+  padding: 10px;
+}
+.card_info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.card_info > h3 {
+  font-size: 13px;
+}
+.card_info > h2 {
+  font-size: 16px;
+}
+.card_userCard {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.card_userCard > img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+@media (max-width: 350px) {
+  .card_user {
+    font-size: 9px;
+  }
+  .card_info > h3 {
+    font-size: 11px;
+  }
+  .card_info > h2 {
+    font-size: 13px;
+  }
+  .card_userCard > img {
+    width: 45px;
+    height: 45px;
+  }
+}

@@ -1,0 +1,56 @@
+.addInfo {
+  min-height: calc(100vh - 212px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "lora";
+}
+
+.addInfo_main {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #0043a5;
+  border-bottom: 1px solid #0043a5;
+  border-radius: 22px;
+  padding: 10px;
+  min-width: 275px;
+}
+
+.addInfo_contant {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+.addInfo_contant > .MuiFormControl-root {
+  margin: 10px;
+}
+.addInfo_contant > .MuiFormControl-root > .MuiInputBase-root {
+  font-family: "lora";
+}
+.addInfo_contant > button {
+  padding: 10px;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  border-radius: 50px;
+  border: none;
+  color: white;
+  font-family: "lora";
+  font-size: 12px;
+}
+
+.addInfo_icons {
+  color: #0043a5;
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+.addInfo_main > .MuiButton-root {
+  padding: 10px;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  border-radius: 50px;
+  border: none;
+  color: white;
+  font-family: "lora";
+  font-size: 13px;
+  margin: 20px;
+}

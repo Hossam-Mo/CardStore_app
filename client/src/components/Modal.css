@@ -1,0 +1,43 @@
+.modal_title {
+  font-size: 15px;
+  color: rgb(88, 88, 88);
+  font-family: "LORA";
+}
+
+.modal_contant {
+  display: flex;
+  align-items: center;
+  font-family: "lora";
+  padding: 10px;
+  color: rgb(34, 34, 34);
+}
+
+.modal_contant > h2 {
+  margin: 5px;
+  font-size: 20px;
+}
+.modal_contant > h2:nth-child(1) {
+  font-size: 16px;
+}
+.modal_contant > button {
+  margin: 10px;
+  width: 120px;
+  margin-top: 25px;
+}
+.modal_footer {
+  font-size: 14px;
+  color: rgb(32, 32, 32);
+  font-family: "LORA";
+}
+.modal_button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  font-family: "Lora";
+  border-radius: 50px;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  box-shadow: 2px 2px 10px 0px black;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}

@@ -1,0 +1,36 @@
+.login {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lora";
+}
+.login > h1 {
+  font-size: 22px;
+  font-weight: 500;
+}
+.login_box {
+  width: 70vw;
+  height: 70vw;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.box_div {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 20px;
+  padding: 10px;
+}
+.box_div > svg {
+  font-size: 25px;
+}
+.box_div > .MuiButtonBase-root {
+  font-family: "Lora";
+  font-size: 12px;
+}

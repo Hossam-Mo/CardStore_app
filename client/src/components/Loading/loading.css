@@ -1,0 +1,48 @@
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.loading > h1 {
+  margin-bottom: 25px;
+  font-family: "Lobster Two";
+  color: #0043a5;
+  transform: scale(0.7);
+  animation: scale 2s linear infinite;
+}
+.loading_main {
+  animation: rotate 3s linear infinite;
+}
+.loading_circle1 {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  border-radius: 50%;
+  animation: scale 2s linear infinite;
+  transform: scale(0);
+}
+.loading_circle2 {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation: scale 2s linear infinite;
+  animation-delay: 1s;
+  margin: -10px;
+  transform: scale(0);
+  background-color: #0043a5;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scale {
+  50% {
+    transform: scale(1);
+  }
+}

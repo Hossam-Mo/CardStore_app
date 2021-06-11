@@ -1,0 +1,153 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 212px);
+}
+.main > a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.main > a > .MuiIconButton-root {
+  color: white;
+  width: 50%;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  text-align: center;
+  border: none;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 10px auto;
+  font-size: 19px;
+  font-family: "Lora";
+}
+.main_noCards {
+  text-align: center;
+  font-size: 15px;
+  font-family: "Lora";
+  color: rgb(56, 56, 56);
+  margin: 50px;
+}
+.main_noCards > a > button {
+  border: none;
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 20px;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  color: white;
+  font-family: "Lora";
+}
+.main_money {
+  color: #4c5053;
+  width: 50%;
+  text-align: center;
+  border: 1px solid #dde0e6;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 10px auto;
+}
+.main_money > h1 {
+  font-size: 18px;
+  font-family: "Lora";
+  font-weight: 500;
+}
+.main_card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dde0e6;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 10px 20px;
+  transition: all 1s ease-in-out;
+}
+.card_img {
+  color: #646669;
+  font-family: "Lora";
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+.card_buy {
+  display: flex;
+  align-items: center;
+  color: #646669;
+}
+
+.card_buy > h3 {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Lora";
+}
+.card_buy > a {
+  text-decoration: none;
+}
+.card_buy > a > button {
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  color: white;
+  font-family: "Lora";
+  border-radius: 20px;
+  width: 89px;
+  height: 40px;
+  outline: none;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.card_buy > button {
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  color: white;
+  font-family: "Lora";
+  border-radius: 20px;
+  width: 89px;
+  height: 40px;
+  outline: none;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.card_buy > button:hover {
+  background-image: linear-gradient(to left, #0043a5, #025ac1);
+}
+
+.card_delete > button {
+  width: auto;
+}
+.card_updateInput {
+  width: 20%;
+}
+.card_updateInput > div {
+  color: #646669;
+  font-family: "Lora";
+  font-size: 15px;
+}
+.img_desc {
+  display: flex;
+  flex-direction: column;
+}
+.img_desc > h4 {
+  font-weight: 500;
+}
+.img_photo {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.img_updateInput {
+  width: 100%;
+}
+.img_updateInput > div {
+  color: #646669;
+  font-family: "Lora";
+  font-size: 13px;
+}
+.main_admin {
+  transition: all 0.4s ease-in-out;
+}

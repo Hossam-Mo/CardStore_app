@@ -1,0 +1,63 @@
+.footer {
+  position: sticky;
+  bottom: 0;
+  height: 90px;
+  width: calc(100vw - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f8fb;
+  border-top: 1px solid #dde0e6;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0px 0px 10px 0px rgb(228, 228, 228);
+}
+
+.footer > button {
+  height: 55px;
+  width: 55px;
+  color: white;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+}
+.footer > a > button {
+  height: 55px;
+  width: 55px;
+  color: white;
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+}
+.footer > a {
+  height: 55px;
+  width: 55px;
+  margin: 0;
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+.footer_menu {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  height: 100vh;
+  width: 100vw;
+  background-color: transparent;
+  display: flex;
+  z-index: 10;
+  transition: left 0.7s ease-in-out;
+}
+
+.menu_contant {
+  height: 100vh;
+  width: 70vw;
+  background-color: #fdfdfd;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  box-shadow: 10px 0px 30vw 0px rgb(0 0 0 / 30%);
+}
+
+.menu_opacity {
+  background-color: rgba(0, 0, 0, 0);
+  height: 100vh;
+  width: 30vw;
+}
