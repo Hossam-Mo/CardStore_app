@@ -60,7 +60,6 @@ function App() {
       .onSnapshot((s: any) => {
         setUserInfo(s.data());
       });
-    console.log("k");
   }, [user]);
 
   useEffect(() => {
