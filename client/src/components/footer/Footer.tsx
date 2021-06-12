@@ -24,10 +24,13 @@ export default function Footer() {
 
   return (
     <div className="footer">
-      <IconButton onClick={openMenu}>
-        <IoPersonOutline></IoPersonOutline>
-      </IconButton>
-      <Link to="/">
+      <Link to="/cashout">
+        <IconButton>
+          <IoPersonOutline></IoPersonOutline>
+        </IconButton>
+      </Link>
+
+      <Link className="footer_mid" to="/">
         <IconButton className="footer_home">
           <IoHomeOutline></IoHomeOutline>
         </IconButton>

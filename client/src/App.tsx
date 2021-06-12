@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Loading from "./components/Loading/Loading";
 import Transactions from "./components/Transactions/Transactions";
 import AddInfo from "./components/info/AddInfo";
+import CashOut from "./components/cashOut/CashOut";
 //import Main from "./components/cards/Main";
 const Main = lazy(() => import("./components/cards/Main"));
 //import Nav from "./components/cards/Nav";
@@ -81,6 +82,11 @@ function App() {
         <Router>
           <Suspense fallback={<Loading></Loading>}>
             <Switch>
+              <Route exact path="/cashout">
+                <Nav></Nav>
+                <CashOut></CashOut>
+                <Footer></Footer>
+              </Route>
               <Route exact path="/info">
                 <Nav></Nav>
                 <AddInfo></AddInfo>
