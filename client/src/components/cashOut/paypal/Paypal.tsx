@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { useSelector } from "react-redux";
+import { db } from "../../../firebase";
 
 declare const window: any;
 const PayPalButton = window.paypal?.Buttons.driver("react", {
@@ -11,6 +13,9 @@ interface props {
   amount: string | undefined;
 }
 export default function Paypal({ amount }: props) {
+  const userInfo = useSelector((state: any) => state.userInfo);
+  const user = useSelector((state: any) => state.user);
+
   const createOrder = (data: any, actions: any) => {
     if (amount) {
       return actions.order.create({
@@ -29,15 +34,23 @@ export default function Paypal({ amount }: props) {
   };
 
   const onApprove = (data: any, actions: any) => {
-    console.log(data);
     actions.order
       .capture()
       .then((r: any) => {
-        console.log(r);
+        const value = Number(r.purchase_units[0].amount.value);
+        const oldBalance = Number(userInfo?.balance);
+        const newBalance = value + oldBalance;
+
+        alert("The transaction completed");
+        db.collection("users").doc(user?.uid).update({ balance: newBalance });
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("CashAdd")
+          .add({ time: r.create_time, amount: value });
       })
       .catch((err: any) => {
         console.log(err);
-        alert(err);
+        alert("Something went wrong. Please try again later");
       });
   };
   return (
