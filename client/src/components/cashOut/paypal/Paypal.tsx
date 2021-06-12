@@ -12,16 +12,20 @@ interface props {
 }
 export default function Paypal({ amount }: props) {
   const createOrder = (data: any, actions: any) => {
-    return actions.order.create({
-      purchase_units: [
-        {
-          description: "Add cash for the app",
-          amount: {
-            value: amount,
+    if (amount) {
+      return actions.order.create({
+        purchase_units: [
+          {
+            description: "Add cash for the app",
+            amount: {
+              value: amount,
+            },
           },
-        },
-      ],
-    });
+        ],
+      });
+    } else {
+      alert("Please chose an amount");
+    }
   };
 
   const onApprove = (data: any, actions: any) => {
