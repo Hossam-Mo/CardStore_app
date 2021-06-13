@@ -18,32 +18,40 @@ export default function Users() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
+    let isMounted = true;
+
     db.collection("users").onSnapshot((s) => {
-      setUsers(
-        s.docs.map((user) => {
-          return {
-            id: user.id,
-            admin: user.data().admin,
-            balance: user.data().balance,
-            username: user.data().username.toUpperCase(),
-            email: user.data().email,
-            imgUrl: user.data().imgUrl,
-          };
-        })
-      );
-      setSearchUsers(
-        s.docs.map((user) => {
-          return {
-            id: user.id,
-            admin: user.data().admin,
-            balance: user.data().balance,
-            username: user.data().username.toUpperCase(),
-            email: user.data().email,
-            imgUrl: user.data().imgUrl,
-          };
-        })
-      );
+      if (isMounted) {
+        setUsers(
+          s.docs.map((user) => {
+            return {
+              id: user.id,
+              admin: user.data().admin,
+              balance: user.data().balance,
+              username: user.data().username.toUpperCase(),
+              email: user.data().email,
+              imgUrl: user.data().imgUrl,
+            };
+          })
+        );
+        setSearchUsers(
+          s.docs.map((user) => {
+            return {
+              id: user.id,
+              admin: user.data().admin,
+              balance: user.data().balance,
+              username: user.data().username.toUpperCase(),
+              email: user.data().email,
+              imgUrl: user.data().imgUrl,
+            };
+          })
+        );
+      }
     });
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   useEffect(() => {
