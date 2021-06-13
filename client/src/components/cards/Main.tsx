@@ -9,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 import Modal from "../Modal";
 import { useSelector } from "react-redux";
 import CompleteModal from "../CompleteModal";
+import AlertModal from "../alertModal/AlertModal";
 
 interface arr {
   cardNumber?: string;
@@ -38,6 +39,8 @@ export default function Main({ update }: props) {
   const [warning, setWarning] = useState(false);
   const [cardNumber, setCardNumber] = useState(0);
   const [crrentCard, setCrrentCard] = useState<arr>();
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertContant, setAplertContant] = useState("");
 
   const { typeId } = useParams<ParamTypes>();
   const { catagId } = useParams<ParamTypes>();
@@ -170,10 +173,10 @@ export default function Main({ update }: props) {
               })
               .catch((err) => {
                 console.log(err);
+                setAlertOpen(true);
+                setAplertContant("Somthing went wrong");
               });
-            console.log(s.docs[0].data());
-            console.log(card);
-            console.log(user);
+
             // users transactions
             db.collection("users")
               .doc(user.uid)
@@ -198,10 +201,13 @@ export default function Main({ update }: props) {
           })
           .catch((err) => {
             console.log(err);
+            setAlertOpen(true);
+            setAplertContant("Somthing went wrong");
           });
       }
     } else {
-      alert("Sorry you don't have enough balance");
+      setAlertOpen(true);
+      setAplertContant("Sorry you don't have enough balance");
     }
   };
   const addCard = () => {
@@ -209,6 +215,12 @@ export default function Main({ update }: props) {
   };
   return (
     <div>
+      <AlertModal
+        contant={alertContant}
+        open={alertOpen}
+        setOpen={setAlertOpen}
+      ></AlertModal>
+
       {!userInfo?.admin ? (
         <div className="main">
           <div className="main_money">

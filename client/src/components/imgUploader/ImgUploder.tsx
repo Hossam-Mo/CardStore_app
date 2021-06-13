@@ -3,6 +3,7 @@ import { Button, TextField } from "@material-ui/core";
 import "./imgUploder.css";
 import { db, storage } from "../../firebase";
 import { useSelector } from "react-redux";
+import AlertModal from "../alertModal/AlertModal";
 
 function ImageUpload() {
   const [image, setImage] = useState<any>(null);
@@ -11,6 +12,8 @@ function ImageUpload() {
   const [typeName, setTypeName] = useState("");
   const input = useRef<HTMLInputElement>(null);
   const [selectErr, setSelectErr] = useState<string | null>(null);
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertContant, setAplertContant] = useState("");
 
   const allowedTypes = ["image/png", "image/jpeg"];
 
@@ -21,7 +24,8 @@ function ImageUpload() {
         imgUrl: imgUrl,
       });
     } else {
-      alert("Please add a name");
+      setAlertOpen(true);
+      setAplertContant("Please add a name");
     }
   };
 
@@ -77,16 +81,22 @@ function ImageUpload() {
               })
               .catch((err: any) => {
                 console.log(err);
-                alert(err);
               });
           }
         );
     } else {
-      alert("Please add a Name and an Image");
+      setAlertOpen(true);
+      setAplertContant("Please add a Name and an Image");
     }
   };
   return (
     <form className="add_box add_boxMargin">
+      <AlertModal
+        contant={alertContant}
+        open={alertOpen}
+        setOpen={setAlertOpen}
+      ></AlertModal>
+
       <h2>Enter Details :</h2>
       <TextField
         value={typeName}
