@@ -1,6 +1,7 @@
 import { Button, InputAdornment, MenuItem, TextField } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase";
+import AlertModal from "../alertModal/AlertModal";
 import CompleteModal from "../CompleteModal";
 import ImageUpload from "../imgUploader/ImgUploder";
 import "./addcards.css";
@@ -22,6 +23,8 @@ export default function Addcards({ params }: props) {
   const [type, setType] = useState("");
   const [typeImg, setTypeImg] = useState<select>();
   const [selectType, setSelectType] = useState<select[]>();
+  const [open, setOpen] = useState(false);
+  const [alertContant, setAplertContant] = useState("");
 
   useEffect(() => {
     db.collection("cards").onSnapshot((s) => {
@@ -46,7 +49,8 @@ export default function Addcards({ params }: props) {
       number === "" ||
       type === ""
     ) {
-      alert("Please fill all the fields");
+      setOpen(true);
+      setAplertContant("Please fill all the fields");
     } else {
       db.collection("cards")
         .doc(type)
@@ -78,13 +82,19 @@ export default function Addcards({ params }: props) {
       setPrice("");
       setNumber("");
       setType("");
-      alert("The card has been added");
+
+      setOpen(true);
+      setAplertContant("The card has been added");
     }
   };
 
-  const a = ["zain", "orang", "pubg"];
   return (
     <div className="add">
+      <AlertModal
+        contant={alertContant}
+        open={open}
+        setOpen={setOpen}
+      ></AlertModal>
       <h1>Add a New Card</h1>
       {params ? (
         <form className="add_box">
