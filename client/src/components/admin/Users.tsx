@@ -25,7 +25,7 @@ export default function Users() {
             id: user.id,
             admin: user.data().admin,
             balance: user.data().balance,
-            username: user.data().username,
+            username: user.data().username.toUpperCase(),
             email: user.data().email,
             imgUrl: user.data().imgUrl,
           };
@@ -37,7 +37,7 @@ export default function Users() {
             id: user.id,
             admin: user.data().admin,
             balance: user.data().balance,
-            username: user.data().username,
+            username: user.data().username.toUpperCase(),
             email: user.data().email,
             imgUrl: user.data().imgUrl,
           };
@@ -55,7 +55,7 @@ export default function Users() {
       setUsers(
         searchUsers.filter((obj) => {
           if (
-            obj.username.indexOf(search.toLowerCase().replace(/\s/g, "")) > -1
+            obj.username.indexOf(search.toUpperCase().replace(/\s/g, "")) > -1
           ) {
             return obj.username;
           }
