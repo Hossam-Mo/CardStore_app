@@ -21,7 +21,6 @@ export default function Login() {
           .doc(info.user?.uid)
           .get()
           .then((s) => {
-            console.log(info.user);
             if (!s.exists) {
               db.collection("users").doc(info.user?.uid).set({
                 username: info.user?.displayName,

@@ -39,9 +39,10 @@ function App() {
 
   useEffect(() => {
     // keeping the user in
+
     auth.onAuthStateChanged((user) => {
+      console.log("this time", user);
       if (user) {
-        console.log("user changeed");
         dispatch({
           type: signInType.type,
           user,
@@ -53,10 +54,13 @@ function App() {
         });
       }
     });
-  }, [user]);
+
+    return () => {};
+  }, []);
 
   useEffect(() => {
     // getting the users info
+
     db.collection("users")
       .doc(user?.uid)
       .onSnapshot((s: any) => {

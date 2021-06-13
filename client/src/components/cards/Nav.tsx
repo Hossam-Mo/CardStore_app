@@ -12,7 +12,6 @@ interface ParamTypes {
 function Nav() {
   const history = useHistory();
   const { typeId } = useParams<ParamTypes>();
-
   const path = useLocation();
 
   const goBack = () => {

@@ -16,6 +16,8 @@ export const getUserInfo = (state = null, action: any) => {
   switch (action.type) {
     case userInfoType.type:
       return action.info;
+    case signOutType.type:
+      return null;
     default:
       return state;
   }
