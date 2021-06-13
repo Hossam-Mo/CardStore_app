@@ -1,6 +1,6 @@
 import { IconButton } from "@material-ui/core";
 import { lazy, useRef } from "react";
-import { BsListTask } from "react-icons/bs";
+import { BsListTask, BsCreditCard } from "react-icons/bs";
 import { IoHomeOutline, IoPersonOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 //import AdminMenu from "./menu/AdminMenu";
@@ -26,7 +26,7 @@ export default function Footer() {
     <div className="footer">
       <Link to="/cashout">
         <IconButton>
-          <IoPersonOutline></IoPersonOutline>
+          <BsCreditCard></BsCreditCard>
         </IconButton>
       </Link>
 
