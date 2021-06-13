@@ -10,8 +10,8 @@
 .addInfo_main {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #0043a5;
-  border-bottom: 1px solid #0043a5;
+  border-top: 2px solid #0043a5;
+  border-bottom: 2px solid #0043a5;
   border-radius: 22px;
   padding: 10px;
   min-width: 275px;
