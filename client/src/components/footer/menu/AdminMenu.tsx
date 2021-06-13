@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { auth } from "../../../firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { signOutType } from "../../../redux/actionTypes";
-import { useEffect } from "react";
 
 export default function AdminMenu() {
   const userInfo = useSelector((state: any) => state.userInfo);
@@ -59,7 +58,7 @@ export default function AdminMenu() {
             <BiTransfer></BiTransfer>
             <h4>Transactions</h4>
           </Link>
-          <Link className="menu_links" to="/">
+          <Link className="menu_links" to="/info">
             <IoCallSharp></IoCallSharp>
             <h4>Call us</h4>
           </Link>
