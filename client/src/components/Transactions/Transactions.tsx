@@ -75,7 +75,7 @@ export default function Transactions() {
           setTransactions(r.data);
         })
         .catch((err) => {
-          alert(err);
+          console.log(err);
         });
   };
 

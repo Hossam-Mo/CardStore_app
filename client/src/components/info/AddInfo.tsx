@@ -28,7 +28,7 @@ export default function AddInfo() {
         setEmail(r.data()?.email);
       })
       .catch((err) => {
-        alert(err);
+        console.log(err);
       });
   }, []);
 
