@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { db } from "../../firebase";
 import "./home.css";
 import homelogo from "../../img/homeLogo2.svg";
+import AlertModal from "../alertModal/AlertModal";
 interface types {
   id: string;
   imgUrl: string;

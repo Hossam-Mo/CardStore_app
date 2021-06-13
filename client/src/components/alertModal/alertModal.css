@@ -1,0 +1,14 @@
+.alert_contant {
+  font-family: "lora";
+  font-size: 17px;
+}
+
+.alert_button {
+  background-image: linear-gradient(to right, #0043a5, #025ac1);
+  font-family: "lora";
+  padding: 10px;
+  border: none;
+  border-radius: 35px;
+  color: white;
+  margin-top: 10px;
+}
