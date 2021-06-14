@@ -4,6 +4,7 @@ import "./login.css";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 import { signInType } from "../../redux/actionTypes";
+import login from "../../img/login.svg";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ export default function Login() {
 
   return (
     <div className="login">
+      <img className="login_background" src="/Login.png" alt="img"></img>
       <h1>Card App</h1>
       <div className="login_box">
         <div className="box_div">
