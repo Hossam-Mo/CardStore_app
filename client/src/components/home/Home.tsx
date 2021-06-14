@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { db } from "../../firebase";
 import "./home.css";
 import homelogo from "../../img/homeLogo2.svg";
+import home from "../../img/home.svg";
 interface types {
   id: string;
   imgUrl: string;
@@ -56,7 +57,7 @@ export default function Home() {
   return (
     <div className="home">
       <div className="home_head">
-        <img className="head_background" src="/home.png" alt="head"></img>
+        <img className="head_background" src={home} alt="head"></img>
         <img className="head_logo" src={homelogo}></img>
       </div>
       <TextField
