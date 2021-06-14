@@ -43,7 +43,7 @@ export default function Login() {
     if (window.innerWidth <= 650) {
       SetBackground("Login.png");
     } else {
-      SetBackground("loginPc.png");
+      SetBackground("loginPC.png");
     }
   }, []);
 
