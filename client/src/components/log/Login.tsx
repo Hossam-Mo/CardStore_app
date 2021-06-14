@@ -4,11 +4,12 @@ import "./login.css";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 import { signInType } from "../../redux/actionTypes";
-import login from "../../img/login.svg";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Login() {
   const dispatch = useDispatch();
-
+  const [background, SetBackground] = useState("");
   const signIn = () => {
     auth
       .signInWithPopup(googleProvider)
@@ -38,9 +39,17 @@ export default function Login() {
       });
   };
 
+  useEffect(() => {
+    if (window.innerWidth <= 650) {
+      SetBackground("Login.png");
+    } else {
+      SetBackground("loginPc.png");
+    }
+  }, []);
+
   return (
     <div className="login">
-      <img className="login_background" src="/Login.png" alt="img"></img>
+      <img className="login_background" src={background} alt="img"></img>
       <h1>Card App</h1>
       <div className="login_box">
         <div className="box_div">
