@@ -38,3 +38,18 @@
   width: 75px;
   object-fit: contain;
 }
+
+@media screen and (max-width: 350px) {
+  .nav_head > h1 {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+  .nav_img {
+    height: 67px;
+    width: 67px;
+  }
+  .nav_head > button {
+    width: 45px;
+    height: 45px;
+  }
+}
