@@ -61,3 +61,19 @@
   height: 100vh;
   width: 30vw;
 }
+@media screen and (max-width: 350px) {
+  .footer > button {
+    height: 45px;
+    width: 45px;
+  }
+  .footer > a > button {
+    height: 45px;
+    width: 45px;
+  }
+  .footer_mid {
+    height: 45px;
+    width: 45px;
+
+    margin-left: 10px;
+  }
+}

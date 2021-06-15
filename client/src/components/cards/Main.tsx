@@ -229,7 +229,9 @@ export default function Main({ update }: props) {
           {cards?.length === 0 ? (
             <div className="main_noCards">
               <h1>Sorry We have no more {typeId} cards</h1>
-              <h3>you can contact us on 07923122331 for more info</h3>
+              <Link to="/info">
+                <button>Call us</button>
+              </Link>
               <Link to="/">
                 <button>Back</button>
               </Link>
