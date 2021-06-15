@@ -65,3 +65,22 @@
   background-color: #f4f4f4;
   color: #0043a5;
 }
+
+@media screen and (max-width: 350px) {
+  .adminMenu_header > img {
+    width: 53px;
+    height: 53px;
+  }
+  .adminMenu_header > h1 {
+    font-size: 13px;
+  }
+  .adminMenu_header > p {
+    font-size: 12px;
+  }
+  .menu_links {
+    font-size: 13px;
+  }
+  .menu_links > svg {
+    font-size: 16px;
+  }
+}
