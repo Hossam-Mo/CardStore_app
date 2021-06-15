@@ -41,7 +41,6 @@ function App() {
     // keeping the user in
 
     auth.onAuthStateChanged((user) => {
-      console.log("this time", user);
       if (user) {
         dispatch({
           type: signInType.type,
