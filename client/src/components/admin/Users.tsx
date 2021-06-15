@@ -1,5 +1,6 @@
 import { TextField } from "@material-ui/core";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { db } from "../../firebase";
 import UserRow from "./UserRow";
 import "./users.css";
@@ -12,11 +13,19 @@ interface users {
   imgUrl: string;
 }
 
+interface state {
+  userInfo: users;
+}
 export default function Users() {
   const [users, setUsers] = useState<users[]>();
   const [searchUsers, setSearchUsers] = useState<users[]>();
   const [search, setSearch] = useState("");
 
+  const userInfo = useSelector((state: state) => state.userInfo);
+
+  useEffect(() => {
+    console.log(userInfo);
+  }, [userInfo]);
   useEffect(() => {
     let isMounted = true;
 
@@ -73,31 +82,39 @@ export default function Users() {
   };
 
   return (
-    <div className="users">
-      <TextField
-        className="users_search"
-        value={search}
-        onChange={(e) => {
-          setSearch(e.target.value);
-        }}
-        label="Search"
-        variant="outlined"
-      ></TextField>
-      <div className="users_hr"></div>
+    <div>
+      {userInfo?.admin ? (
+        <div className="users">
+          <TextField
+            className="users_search"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+            label="Search"
+            variant="outlined"
+          ></TextField>
+          <div className="users_hr"></div>
 
-      {users?.map((user) => {
-        return (
-          <UserRow
-            key={user.id}
-            id={user.id}
-            admin={user.admin}
-            balance={user.balance}
-            username={user.username}
-            imgUrl={user.imgUrl}
-            email={user.email}
-          ></UserRow>
-        );
-      })}
+          {users?.map((user) => {
+            return (
+              <UserRow
+                key={user.id}
+                id={user.id}
+                admin={user.admin}
+                balance={user.balance}
+                username={user.username}
+                imgUrl={user.imgUrl}
+                email={user.email}
+              ></UserRow>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="nonAdmin">
+          You dont have the permission to this page
+        </div>
+      )}
     </div>
   );
 }
