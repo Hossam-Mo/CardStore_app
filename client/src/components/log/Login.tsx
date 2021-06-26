@@ -7,21 +7,27 @@ import { useDispatch } from "react-redux";
 import { signInType } from "../../redux/actionTypes";
 import { useState } from "react";
 import { useEffect } from "react";
+import AlertModal from "../alertModal/AlertModal";
 
 export default function Login() {
   const dispatch = useDispatch();
   const [background, SetBackground] = useState("");
   const [install, setInstall] = useState<any>();
+  const [open, setOpen] = useState(false);
+
   const download = () => {
-    console.log(install);
-    install.prompt();
-    install.userChoice
-      .then((res: any) => {
-        console.log(res);
-      })
-      .catch((err: any) => {
-        console.log(err);
-      });
+    if (install) {
+      install.prompt();
+      install.userChoice
+        .then((res: any) => {
+          console.log(res);
+        })
+        .catch((err: any) => {
+          console.log(err);
+        });
+    } else {
+      setOpen(true);
+    }
   };
   const signIn = () => {
     auth
@@ -61,8 +67,10 @@ export default function Login() {
   }, []);
 
   useEffect(() => {
+    console.log(install);
     if (!install) {
       const event = (e: any) => {
+        e.preventDefault();
         setInstall(e);
 
         console.log(`'beforeinstallprompt' event was fired.`);
@@ -71,8 +79,19 @@ export default function Login() {
       window.addEventListener("beforeinstallprompt", event);
     }
   }, [install]);
+  /*  useEffect(() => {
+    window.addEventListener("appinstalled", (evt) => {
+      console.log("a2hs installed");
+    });
+  }, []); */
+
   return (
     <div className="login">
+      <AlertModal
+        open={open}
+        setOpen={setOpen}
+        contant={"The App is already installed"}
+      ></AlertModal>
       <img className="login_background" src={background} alt="img"></img>
       <h1>Card App</h1>
       <div className="login_box">

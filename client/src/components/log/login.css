@@ -27,6 +27,13 @@
   align-items: center;
   justify-content: center;
 }
+.login_box > h2 {
+  color: white;
+  font-size: 15px;
+  margin: 10px;
+  font-weight: 500;
+  font-family: "lora";
+}
 .box_div {
   display: flex;
   align-items: center;
