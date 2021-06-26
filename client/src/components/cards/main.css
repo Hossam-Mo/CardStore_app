@@ -33,6 +33,7 @@
 }
 .main_noCards > h1 {
   font-size: 23px;
+  text-align: center;
 }
 .main_noCards > a > button {
   border: none;
