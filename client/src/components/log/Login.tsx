@@ -2,6 +2,7 @@ import { Button } from "@material-ui/core";
 import { auth, db, googleProvider } from "../../firebase";
 import "./login.css";
 import { FcGoogle } from "react-icons/fc";
+import { FaCloudDownloadAlt } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { signInType } from "../../redux/actionTypes";
 import { useState } from "react";
@@ -10,6 +11,18 @@ import { useEffect } from "react";
 export default function Login() {
   const dispatch = useDispatch();
   const [background, SetBackground] = useState("");
+  const [install, setInstall] = useState<any>();
+  const download = () => {
+    console.log(install);
+    install.prompt();
+    install.userChoice
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      });
+  };
   const signIn = () => {
     auth
       .signInWithPopup(googleProvider)
@@ -47,6 +60,17 @@ export default function Login() {
     }
   }, []);
 
+  useEffect(() => {
+    if (!install) {
+      const event = (e: any) => {
+        setInstall(e);
+
+        console.log(`'beforeinstallprompt' event was fired.`);
+      };
+
+      window.addEventListener("beforeinstallprompt", event);
+    }
+  }, [install]);
   return (
     <div className="login">
       <img className="login_background" src={background} alt="img"></img>
@@ -56,6 +80,13 @@ export default function Login() {
           <FcGoogle></FcGoogle>
           <Button className="box_button" onClick={signIn}>
             Sign in with google
+          </Button>
+        </div>
+        <h2>OR</h2>
+        <div className="box_div">
+          <FaCloudDownloadAlt></FaCloudDownloadAlt>
+          <Button onClick={download} className="box_button">
+            DownLoad
           </Button>
         </div>
       </div>
