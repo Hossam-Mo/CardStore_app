@@ -10,6 +10,7 @@ import firebase from "firebase";
   measurementId: "G-6V8ZPDF0SQ",
 }; */
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDvmzbU1YP0lSTpV2mTwcqNSWgsYFfEQUw",
   authDomain: "cardapp-jos.firebaseapp.com",
